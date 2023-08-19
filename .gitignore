@@ -79,3 +79,4 @@ typings/
 
 # Service worker
 sw.*
+.vercel
