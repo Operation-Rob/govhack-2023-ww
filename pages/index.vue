@@ -3,10 +3,10 @@
     <div>
       <logo />
       <h1 class="title">
-        govhack-2023-hkb
+        govhack-2023-ww
       </h1>
       <h2 class="subtitle">
-         Heritage Knowledge Base project for GovHack 2023
+        Wisdom Walks project for GovHack 2023
       </h2>
       <div class="links">
         <a

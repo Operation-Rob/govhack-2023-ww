@@ -1,6 +1,6 @@
-# govhack-2023-hkb
+# govhack-2023-ww
 
->  Heritage Knowledge Base project for GovHack 2023
+> Wisdom Walks project for GovHack 2023 by team O.R.G.
 
 ## Build Setup
 
