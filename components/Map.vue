@@ -6,6 +6,7 @@
 
 <script>
   import mapboxgl from 'mapbox-gl'
+  import dataset from '@/data/sites.json'
 
   export default {
     data() {
@@ -32,6 +33,24 @@
           dragPan: false,
           scrollZoom: false,
           touchZoomRotate: false
+        })
+
+        this.map.on('load', () => {
+          this.map.addSource('sites', {
+            type: 'geojson',
+            data: dataset
+          })
+          this.map.addLayer({
+            id: 'sites',
+            type: 'circle',
+            source: 'sites',
+            paint: {
+              'circle-color': '#4264fb',
+              'circle-radius': 6,
+              'circle-stroke-width': 2,
+              'circle-stroke-color': '#ffffff'
+            }
+          })
         })
       }
     }

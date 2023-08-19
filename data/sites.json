@@ -1,0 +1,37 @@
+{
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "1",
+          "name": "Wunyunba",
+          "image": "montague-island.jpg"
+       },
+        "geometry": {
+          "coordinates": [
+            143.36,
+            -31.68
+          ],
+          "type": "Point"
+        },
+        "id": "20b9c595e4d659de2d5e3ce275ccd547"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "2",
+          "name": "Wunyunba",
+          "image": "montague-island.jpg"
+       },
+        "geometry": {
+          "coordinates": [
+            144.36,
+            -32.68
+          ],
+          "type": "Point"
+        },
+        "id": "20b9c595e4d659de2d5e3ce275ccd548"
+      }
+    ],
+    "type": "FeatureCollection"
+  }
