@@ -11,12 +11,14 @@
     "generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "cross-env": "^5.2.0",
+    "mapbox-gl": "^2.15.0",
     "nuxt": "^2.4.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
     "autoprefixer": "^8.6.4",
+    "nodemon": "^1.18.9",
     "tailwindcss": "^0.7.0"
   }
 }
