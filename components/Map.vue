@@ -7,6 +7,8 @@
 <script>
   import mapboxgl from 'mapbox-gl'
   import dataset from '@/data/sites.json'
+  import { nextTick, h } from 'vue'
+  import TooltipContent from '@/components/TooltipContent.vue'
 
   export default {
     data() {
@@ -51,6 +53,37 @@
               'circle-stroke-color': '#ffffff'
             }
           })
+        })
+
+        const popup = new mapboxgl.Popup({
+          closeButton: false,
+          closeOnClick: false
+        })
+
+        this.map.on('mouseenter', 'sites', (e) => {
+          this.map.getCanvas().style.cursor = 'pointer'
+          // Copy coordinates array.
+          const coordinates = e.features[0].geometry.coordinates.slice()
+          const properties = e.features[0].properties
+
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360
+          }
+
+          popup.setLngLat(coordinates).setHTML('<div id="popup-content"></div>').addTo(this.map)
+
+          nextTick(() => {
+            const popupComp = h(TooltipContent, {
+              properties
+            })
+
+            render(popupComp, document.getElementById("popup-content"))
+          })
+        })
+
+        this.map.on('mouseleave', 'sites', () => {
+          this.map.getCanvas().style.cursor = ''
+          popup.remove()
         })
       }
     }
