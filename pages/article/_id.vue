@@ -13,11 +13,13 @@ export default {
     // Replace this with your actual data fetching method, e.g., axios.
     const articles = {
       '1': {
+        id: '1',
         title: 'Sample Article 1',
         description: 'Description for article 1',
         image: 'montague-island.jpg'
       },
       '2': {
+        id: '2',
         title: 'Sample Article 2',
         description: 'Description for article 2',
         image: 'montague-island.jpg'
