@@ -10,6 +10,7 @@
   export default {
     data() {
       return {
+        access_token: process.env.MAPBOX_TOKEN,
         map:{}
       }
     },
@@ -18,13 +19,19 @@
     },
     methods: {
       createMap() {
-        mapboxgl.accessToken = process.env.MAPBOX_TOKEN
+        mapboxgl.accessToken = this.access_token
         console.log(mapboxgl.accessToken)
         this.map = new mapboxgl.Map({
           container: 'map',
-          style: 'mapbox://styles/mapbox/satellite-v9',
-          zoom: 11,
-          center: [107.61861, -6.90389]
+          style: 'mapbox://styles/cjnbennett/clli2gymn00jn01pr0i2s6xne',
+          center: [143.36599431114507,-31.68953090523168],
+          zoom: 6,
+          maxZoom: 6,
+          minZoom: 6,
+          maxBounds: [140.5, -35.159189, 160.976835, -20.980645],
+          dragPan: false,
+          scrollZoom: false,
+          touchZoomRotate: false
         })
       }
     }
