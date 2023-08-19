@@ -1,7 +1,7 @@
 {
   "name": "govhack-2023-hkb",
   "version": "1.0.0",
-  "description": " Heritage Knowledge Base project for GovHack 2023",
+  "description": "Heritage Knowledge Base project for GovHack 2023",
   "author": "",
   "private": true,
   "scripts": {
