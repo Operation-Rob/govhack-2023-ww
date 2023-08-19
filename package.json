@@ -1,0 +1,22 @@
+{
+  "name": "govhack-2023-hkb",
+  "version": "1.0.0",
+  "description": " Heritage Knowledge Base project for GovHack 2023",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider nuxt build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider nuxt start",
+    "generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "autoprefixer": "^8.6.4",
+    "tailwindcss": "^0.7.0"
+  }
+}
