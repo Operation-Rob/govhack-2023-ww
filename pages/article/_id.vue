@@ -1,11 +1,12 @@
 <template>
-  <div class="container">
+  <div id="container">
     <div>
       <div class="desc-container">
         <h1><em>{{ article.title }}</em></h1>
-        <hr class="dotted">
+        <hr class="hr-dotted">
         <br>
-        <p class="description" v-html="article.description"></p>
+        <p class="description" v-html="article.description" />
+        <br>
       </div>
       <div class="img-container">
         <div class="colored-bg">
@@ -20,14 +21,17 @@
       </div>
     </div>
     <div v-if="article.audio" style="clear: both; padding-top: 20px">
-      <h2>Audio</h2>
+      <hr class="hr-solid">
+      <h2>Voice Recording</h2>
       <audio controls :src="`/audio/sites/${article.audio}`">
         <a :href="`/audio/sites/${article.audio}`">Download audio</a>
       </audio>
+      <div class="transcript-text">
+        <br>
+        <u>Transcript:</u>
+      </div>
       <br>
-      <div class="transcript-text"><u>Transcript:</u></div>
-      <br>
-      <p class="description" v-html="article.audio_transcript"></p>
+      <p class="description" v-html="article.audio_transcript" />
     </div>
   </div>
 </template>
@@ -87,7 +91,7 @@ export default {
 </script>
 
 <style>
-.container {
+#container {
   padding: 10px 10px 50px 10px;
   margin: 0 auto;
   align-items: center;
@@ -101,13 +105,17 @@ export default {
 }
 h1, h2 {
   margin-bottom: 10px;
-  color: black;
+  color: #603030;
 }
 h1 {
   margin-top: 20px;
 }
-hr.dotted {
+hr.hr-dotted {
   border-top: 3px dotted #bfafa6;
+  margin-bottom: 20px;
+}
+hr.hr-solid {
+  border-top: 3px solid #bfafa6;
   margin-bottom: 20px;
 }
 img.big-image {
@@ -138,10 +146,11 @@ button.edit-button > a {
   padding: 13px 13px;
   font-weight: bold;
   font-size: 20px;
+  color: #efdace;
 }
 .colored-bg {
   padding: 10px;
-  background-color: #ddd;
+  background-color: #d7d0d0;
   border-radius: 20px;
 }
 .transcript-text {
