@@ -6,7 +6,18 @@
     <br>
     <p class="description">{{ article.description }}</p>
     <br><br>
-    <img :src="`/image/sites/${article.image}`" :alt="Image of ${article.id}" />
+    <img :src="`/image/sites/${article.image}`" :alt="`Image of ${article.id}`" />
+    <div v-if="article.audio">
+      <br><br>
+      <h2>Audio</h2>
+      <audio controls :src="`/audio/sites/${article.audio}`">
+        <a :href="`/audio/sites/${article.audio}`">Download audio</a>
+      </audio>
+      <br>
+      <div>Transcript:</div>
+      <br>
+      <p class="description">{{ article.audio_transcript }}</p>
+    </div>
   </div>
 </template>
 
@@ -76,7 +87,7 @@ export default {
   text-align: left;
   margin: 0 10% 0 10%;
 }
-h1 {
+h1, h2 {
   margin-bottom: 10px;
 }
 hr.dotted {
