@@ -150,7 +150,7 @@ button.edit-button > a {
 }
 .colored-bg {
   padding: 10px;
-  background-color: #d7d0d0;
+  background-color: #c7c0c0;
   border-radius: 20px;
 }
 .transcript-text {
