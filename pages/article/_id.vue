@@ -90,7 +90,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #container {
   padding: 10px 10px 50px 10px;
   margin: 0 auto;
