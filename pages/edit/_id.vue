@@ -2,18 +2,18 @@
   <div id="container">
     <div>
       <div class="desc-container">
-        <h1><em>Edit: {{ article.title }}</em></h1>
+        <h1>Edit: <em><div contentEditable="true">{{ article.title }}</div></em></h1>
         <hr class="hr-dotted">
         <br>
-        <p class="description" v-html="article.description" />
+        <p class="editable description" contentEditable="true" v-html="article.description" />
         <br>
       </div>
       <div class="img-container">
         <div class="colored-bg">
           <div style="height: 80px">
             <div class="elder-certified"><img src="/image/elder-certified.png" alt="Elder Certified" style="height: 20px" /> Elder Certified</div>
-            <button class="edit-button" type="button">
-              <nuxt-link :to="`/edit/${article.id}`"><img src="/image/edit-article.png" alt="Edit Article" style="height: 20px" /> Edit Article</nuxt-link>
+            <button class="return-button" type="button">
+              <nuxt-link :to="`/article/${article.id}`">Return to Article</nuxt-link>
             </button>
           </div>
           <img class="big-image" :src="`/image/sites/${article.image}`" :alt="`Image of ${article.id}`" />
@@ -31,7 +31,7 @@
         <u>Transcript:</u>
       </div>
       <br>
-      <p class="description" v-html="article.audio_transcript" />
+      <p class="editable description" contentEditable="true" v-html="article.audio_transcript" />
     </div>
   </div>
 </template>
@@ -88,4 +88,76 @@ export default {
     };
   }
 }
-</script>  
+</script>
+
+<style scoped>
+#container {
+  padding: 10px 10px 50px 10px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  color: #bfafa6;
+}
+.description {
+  text-indent: 1.5em;
+  text-align: left;
+  margin: 0 10% 0 10%;
+}
+h1, h2 {
+  margin-bottom: 10px;
+  color: #603030;
+}
+h1 {
+  margin-top: 20px;
+}
+hr.hr-dotted {
+  border-top: 3px dotted #bfafa6;
+  margin-bottom: 20px;
+}
+hr.hr-solid {
+  border-top: 3px solid #bfafa6;
+  margin-bottom: 20px;
+}
+img.big-image {
+  border-radius: 20px;
+  max-width: 95% !important;
+}
+.img-container {
+  float: right;
+  width: 60%;
+  padding: 20px;
+}
+.desc-container {
+  float: left;
+  width: 40%;
+}
+button.return-button {
+  float: right;
+  border-radius: 5px;
+  padding: 15px 30px;
+  background-color: #cb9d9d;
+}
+button.edit-button > a {
+  text-decoration: none !important;
+  color: white !important;
+}
+.elder-certified {
+  float: left;
+  padding: 13px 13px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #efdace;
+}
+.colored-bg {
+  padding: 10px;
+  background-color: #c7c0c0;
+  border-radius: 20px;
+}
+.transcript-text {
+  font-size: 20px;
+}
+[contentEditable="true"] {
+  background-color: #eeeeee;
+  color: #3f3333;
+}
+</style>
