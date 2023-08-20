@@ -2,10 +2,10 @@
   <div id="container">
     <div>
       <div class="desc-container">
-        <h1>Edit: <em><div contentEditable="true">{{ article.title }}</div></em></h1>
+        <h1>Edit: <em><div contentEditable="true" spellcheck="false">{{ article.title }}</div></em></h1>
         <hr class="hr-dotted">
         <br>
-        <p class="editable description" contentEditable="true" v-html="article.description" />
+        <p class="editable description" contentEditable="true" spellcheck="false" v-html="article.description" />
         <br>
       </div>
       <div class="img-container">
@@ -31,7 +31,7 @@
         <u>Transcript:</u>
       </div>
       <br>
-      <p class="editable description" contentEditable="true" v-html="article.audio_transcript" />
+      <p class="editable description" contentEditable="true" spellcheck="false" v-html="article.audio_transcript" />
     </div>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
         description: `The Indigenous history of Montague island is told by the dreamtime story of Gulaga, the revered mountain considered the maternal figure and sacred landmark by some Indigenous clans. The narrative unfolds around her two sons, Barranguba and Najanuga.<br><br>Barranguba symbolises Montague Island, known by that name among non-Indigenous people. He is the elder son of Gulaga. According to the story, Gulaga had two sons, Barranguba and Najanuga, with Barranguba being the eldest.`,
         image: 'montague-island.jpg',
         audio: 'gulaga-story.mp3',
-        audio_transcript: `Gulaga Mountain is the Mother Mountain. She has two sons, Najanuga and Baranguba. Baranguba is the older son. Najanuga is the baby son.  She is also pregnant. She lies down on her side. Her head is south and her feet face north — and she is facing out to sea.<br><br>And the story goes that one day her and her two sons, were walking east to collect bush tucker. The oldest son Baranguba asked if he could go fishing and she said, 'No, you're too young, you're to stay next to me'.<br><br>As they walked along, Baranguba was insistent that he go fishing and get some fish for dinner. But she said, 'No, no, you have to stay next to me, it's not safe to go fishing by yourself'. But Baranguba snuck away. He made himself a canoe and he rowed out to sea, and a big wave came and washed him off the canoe and then he laid down in the water — and that's where he still lives today.<br><br>And when the younger son had seen this, he wanted to move away and set up his own camp. She said, 'No, you're too young, you just sit here right next to me'. So now she lies down, she looks out to sea at her older son, and baby son is right next to her, in arm's reach or her.`
+        audio_transcript: `Gulaga Mountain is the Mother Mountain. She has two sons, Najanuga and Baranguba. Baranguba is the older son. Najanuga is the baby son.  She is also pregnant. She lies down on her side. Her head is south and her feet face north - and she is facing out to sea.<br><br>And the story goes that one day her and her two sons, were walking east to collect bush tucker. The oldest son Baranguba asked if he could go fishing and she said, 'No, you're too young, you're to stay next to me'.<br><br>As they walked along, Baranguba was insistent that he go fishing and get some fish for dinner. But she said, 'No, no, you have to stay next to me, it's not safe to go fishing by yourself'. But Baranguba snuck away. He made himself a canoe and he rowed out to sea, and a big wave came and washed him off the canoe and then he laid down in the water - and that's where he still lives today.<br><br>And when the younger son had seen this, he wanted to move away and set up his own camp. She said, 'No, you're too young, you just sit here right next to me'. So now she lies down, she looks out to sea at her older son, and baby son is right next to her, in arm's reach or her.`
       },
       '2': {
         id: '2',
@@ -137,7 +137,7 @@ button.return-button {
   padding: 15px 30px;
   background-color: #cb9d9d;
 }
-button.edit-button > a {
+button.return-button > a {
   text-decoration: none !important;
   color: white !important;
 }
@@ -159,5 +159,6 @@ button.edit-button > a {
 [contentEditable="true"] {
   background-color: #eeeeee;
   color: #3f3333;
+  padding: 5px;
 }
 </style>
