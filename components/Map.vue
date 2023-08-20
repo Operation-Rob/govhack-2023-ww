@@ -87,7 +87,9 @@
 
       this.map.on('mouseleave', 'sites', () => {
         this.map.getCanvas().style.cursor = '';
+        setTimeout(() => {
         popup.remove();
+    }, 3000);
       })
       }
     }
