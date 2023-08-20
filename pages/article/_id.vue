@@ -10,9 +10,9 @@
       <div class="img-container">
         <div class="colored-bg">
           <div style="height: 80px">
-            <div class="elder-certified"><img src="/image/elder-certified.png" alt="Elder Certified" /> Elder Certified</div>
+            <div class="elder-certified"><img src="/image/elder-certified.png" alt="Elder Certified" style="height: 20px" /> Elder Certified</div>
             <button class="edit-button" type="button">
-              <nuxt-link :to="`/edit/${article.id}`"><img src="/image/edit-article.png" alt="Edit Article" /> Edit Article</nuxt-link>
+              <nuxt-link :to="`/edit/${article.id}`"><img src="/image/edit-article.png" alt="Edit Article" style="height: 20px" /> Edit Article</nuxt-link>
             </button>
           </div>
           <img class="big-image" :src="`/image/sites/${article.image}`" :alt="`Image of ${article.id}`" />
