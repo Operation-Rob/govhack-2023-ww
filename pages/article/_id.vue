@@ -16,7 +16,7 @@
       <br>
       <div>Transcript:</div>
       <br>
-      <p class="description", v-html="article.audio_transcript"></p>
+      <p class="description" v-html="article.audio_transcript"></p>
     </div>
   </div>
 </template>
