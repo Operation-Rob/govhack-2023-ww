@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center">
-    <div class="flex-shrink-0 w-14 h-14 bg-gray-200 rounded-full overflow-hidden">
+    <div class="flex-shrink-0 w-14 h-14 border-2 p-0" style="border-color: #bfafa6;">
       <img
         class="object-fill w-full h-full"
         :src="`image/sites/${properties.image}`"
@@ -8,19 +8,23 @@
       />
     </div>
     <div class="ml-3">
-      <p class="text-lg font-medium text-gray-900 truncate" style="max-width: 200px;">
+      <!-- Adjusted the font size to `text-md` from `text-lg` -->
+      <p class="text-md font-medium truncate" style="max-width: 300px; color: #bfafa6; font-family: 'Black Mango';">
         {{ properties.name }}
       </p>
       <div 
         @click="navigateToArticle" 
-        class="text-sm text-gray-600 hover:underline cursor-pointer" 
-        style="max-width: 200px;"
+        class="flex justify-center items-center text-sm text-white hover:underline cursor-pointer py-1 px-3 rounded" 
+        style="max-width: 300px; background-color: #bfafa6; font-family: 'Black Mango';"
       >
         View article
       </div>
     </div>
   </div>
 </template>
+
+
+
   
 <script>
 export default {
