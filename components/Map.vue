@@ -8,6 +8,7 @@
   import mapboxgl from 'mapbox-gl'
   import dataset from '@/data/sites.json'
   import { nextTick, h } from 'vue'
+  import Vue from 'vue'
   import TooltipContent from '@/components/TooltipContent.vue'
 
   export default {
@@ -56,35 +57,40 @@
         })
 
         const popup = new mapboxgl.Popup({
-          closeButton: false,
-          closeOnClick: false
-        })
+        closeButton: false,
+        closeOnClick: false
+      });
 
-        this.map.on('mouseenter', 'sites', (e) => {
-          this.map.getCanvas().style.cursor = 'pointer'
-          // Copy coordinates array.
-          const coordinates = e.features[0].geometry.coordinates.slice()
-          const properties = e.features[0].properties
+      this.map.on('mouseenter', 'sites', (e) => {
+        this.map.getCanvas().style.cursor = 'pointer';
 
-          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360
-          }
+        // Copy coordinates array.
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const properties = e.features[0].properties;
 
-          popup.setLngLat(coordinates).setHTML('<div id="popup-content"></div>').addTo(this.map)
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
 
-          nextTick(() => {
-            const popupComp = h(TooltipContent, {
-              properties
-            })
+        console.log(coordinates)
+        popup.setLngLat(coordinates).setHTML('<div id="popup-content"></div>').addTo(this.map);
 
-            render(popupComp, document.getElementById("popup-content"))
-          })
-        })
+        nextTick(() => {
+  const popupComp = new Vue({
+    render: h => h(TooltipContent, { props: { properties } })
+  }).$mount();  // This creates a new Vue instance and mounts it
 
-        this.map.on('mouseleave', 'sites', () => {
-          this.map.getCanvas().style.cursor = ''
-          popup.remove()
-        })
+  const popupEl = document.getElementById("popup-content");
+  popupEl.appendChild(popupComp.$el);  // Appending the rendered component to the popup
+});
+      });
+
+      this.map.on('mouseleave', 'sites', () => {
+        this.map.getCanvas().style.cursor = '';
+        setTimeout(() => {
+        popup.remove();
+    }, 3000);
+      })
       }
     }
   }

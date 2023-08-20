@@ -15,7 +15,8 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' }
     ]
   },
 
