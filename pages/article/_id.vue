@@ -4,7 +4,7 @@
     <hr class="dotted">
     <nuxt-link :to="`/edit/${article.id}`">Edit Article</nuxt-link>
     <br>
-    <p class="description">{{ article.description }}</p>
+    <p class="description" v-html="article.description"></p>
     <br><br>
     <img :src="`/image/sites/${article.image}`" :alt="`Image of ${article.id}`" />
     <div v-if="article.audio">
@@ -16,7 +16,7 @@
       <br>
       <div>Transcript:</div>
       <br>
-      <p class="description">{{ article.audio_transcript }}</p>
+      <p class="description", v-html="article.audio_transcript"></p>
     </div>
   </div>
 </template>
