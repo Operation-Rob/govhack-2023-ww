@@ -20,3 +20,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## Reference
+
+NSW State Heritage Inventory: https://www.environment.nsw.gov.au/topics/heritage/search-heritage-databases/state-heritage-inventory
