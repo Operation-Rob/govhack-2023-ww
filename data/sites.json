@@ -4,13 +4,13 @@
         "type": "Feature",
         "properties": {
           "id": "1",
-          "name": "Wunyunba",
+          "name": "Montague Island / Gulaga",
           "image": "montague-island.jpg"
        },
         "geometry": {
           "coordinates": [
-            143.36,
-            -31.68
+            150.226036,
+            -36.253738
           ],
           "type": "Point"
         },
@@ -20,13 +20,77 @@
         "type": "Feature",
         "properties": {
           "id": "2",
-          "name": "Wunyunba",
-          "image": "montague-island.jpg"
+          "name": "Koonadan",
+          "image": "koonadan-historic-site.jpg"
        },
         "geometry": {
           "coordinates": [
-            144.36,
-            -32.68
+            146.361481,
+            -34.496954
+          ],
+          "type": "Point"
+        },
+        "id": "20b9c595e4d659de2d5e3ce275ccd548"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "3",
+          "name": "Baerami Creek",
+          "image": "baerami-creek.png"
+       },
+        "geometry": {
+          "coordinates": [
+            150.456936,
+            -32.446071
+          ],
+          "type": "Point"
+        },
+        "id": "20b9c595e4d659de2d5e3ce275ccd548"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "4",
+          "name": "Mungo National Park",
+          "image": "mungo-national-park.jpg"
+       },
+        "geometry": {
+          "coordinates": [
+            143.026327,
+            -33.723403
+          ],
+          "type": "Point"
+        },
+        "id": "20b9c595e4d659de2d5e3ce275ccd548"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "5",
+          "name": "Baiame Cave",
+          "image": "baiame-cave.jpg"
+       },
+        "geometry": {
+          "coordinates": [
+            150.993432,
+            -32.703921
+          ],
+          "type": "Point"
+        },
+        "id": "20b9c595e4d659de2d5e3ce275ccd548"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "6",
+          "name": "Mutawintji Historic Site",
+          "image": "mutawintji-historic-site.jpg"
+       },
+        "geometry": {
+          "coordinates": [
+            142.298308,
+            -31.242683
           ],
           "type": "Point"
         },
