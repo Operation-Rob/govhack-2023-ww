@@ -3,6 +3,7 @@
     <div class="flex-shrink-0 w-14 h-14 border-2 p-0" style="border-color: #bfafa6;">
       <img
         class="object-fill w-full h-full"
+        style="display: block;"
         :src="`image/sites/${properties.image}`"
         alt="Site logo"
       />
