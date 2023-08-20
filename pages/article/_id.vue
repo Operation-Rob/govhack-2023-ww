@@ -3,10 +3,21 @@
     <h1><em>{{ article.title }}</em></h1>
     <hr class="dotted"/>
     <nuxt-link :to="`/edit/${article.id}`">Edit Article</nuxt-link>
-    <br/>
-    <p class="description">{{ article.description }}</p>
+    <br>
+    <p class="description" v-html="article.description"></p>
     <br><br>
     <img :src="`/image/sites/${article.image}`" :alt="`Image of ${article.id}`" />
+    <div v-if="article.audio">
+      <br><br>
+      <h2>Audio</h2>
+      <audio controls :src="`/audio/sites/${article.audio}`">
+        <a :href="`/audio/sites/${article.audio}`">Download audio</a>
+      </audio>
+      <br>
+      <div>Transcript:</div>
+      <br>
+      <p class="description" v-html="article.audio_transcript"></p>
+    </div>
   </div>
 </template>
 
@@ -21,7 +32,7 @@ export default {
         description: `The Indigenous history of Montague island is told by the dreamtime story of Gulaga, the revered mountain considered the maternal figure and sacred landmark by some Indigenous clans. The narrative unfolds around her two sons, Barranguba and Najanuga.<br>Barranguba symbolises Montague Island, known by that name among non-Indigenous people. He is the elder son of Gulaga. According to the story, Gulaga had two sons, Barranguba and Najanuga, with Barranguba being the eldest.`,
         image: 'montague-island.jpg',
         audio: 'gulaga-story.mp3',
-        audio_transcript: `Gulaga Mountain is the Mother Mountain. She has two sons, Najanuga and Baranguba. Baranguba is the older son. Najanuga is the baby son.  She is also pregnant. She lies down on her side. Her head is south and her feet face north � and she is facing out to sea.<br>And the story goes that one day her and her two sons, were walking east to collect bush tucker. The oldest son Baranguba asked if he could go fishing and she said, �No, you�re too young, you�re to stay next to me�.<br>As they walked along, Baranguba was insistent that he go fishing and get some fish for dinner. But she said, �No, no, you have to stay next to me, it�s not safe to go fishing by yourself�. But Baranguba snuck away. He made himself a canoe and he rowed out to sea, and a big wave came and washed him off the canoe and then he laid down in the water � and that�s where he still lives today.<br>And when the younger son had seen this, he wanted to move away and set up his own camp. She said, �No, you�re too young, you just sit here right next to me�. So now she lies down, she looks out to sea at her older son, and baby son is right next to her, in arm�s reach or her.`
+        audio_transcript: `Gulaga Mountain is the Mother Mountain. She has two sons, Najanuga and Baranguba. Baranguba is the older son. Najanuga is the baby son.  She is also pregnant. She lies down on her side. Her head is south and her feet face north � and she is facing out to sea.<br>And the story goes that one day her and her two sons, were walking east to collect bush tucker. The oldest son Baranguba asked if he could go fishing and she said, 'No, you're too young, you're to stay next to me'.<br>As they walked along, Baranguba was insistent that he go fishing and get some fish for dinner. But she said, 'No, no, you have to stay next to me, it's not safe to go fishing by yourself'. But Baranguba snuck away. He made himself a canoe and he rowed out to sea, and a big wave came and washed him off the canoe and then he laid down in the water � and that's where he still lives today.<br>And when the younger son had seen this, he wanted to move away and set up his own camp. She said, 'No, you're too young, you just sit here right next to me'. So now she lies down, she looks out to sea at her older son, and baby son is right next to her, in arm's reach or her.`
       },
       '2': {
         id: '2',
@@ -76,7 +87,7 @@ export default {
   text-align: left;
   margin: 0 10% 0 10%;
 }
-h1 {
+h1, h2 {
   margin-bottom: 10px;
 }
 hr.dotted {
