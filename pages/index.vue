@@ -1,7 +1,7 @@
 <template>
-    <div>
-    <TopBar class="min-h-128px"/>
-    <AppMap class="w-full h-[calc(100vh-128px)]"/>
+    <div class="flex flex-col items-center h-screen">
+        <TopBar class="h-128px w-full"/>
+        <AppMap class="w-full h-4/5vh"/>
     </div>
 </template>
 

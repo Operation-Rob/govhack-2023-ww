@@ -29,32 +29,37 @@
           container: 'map',
           style: 'mapbox://styles/cjnbennett/clli2gymn00jn01pr0i2s6xne',
           center: [143.36599431114507,-31.68953090523168],
-          zoom: 6,
-          maxZoom: 6,
-          minZoom: 6,
-          maxBounds: [140.5, -35.159189, 160.976835, -20.980645],
-          dragPan: false,
-          scrollZoom: false,
-          touchZoomRotate: false
         })
 
         this.map.on('load', () => {
-          this.map.addSource('sites', {
-            type: 'geojson',
-            data: dataset
-          })
-          this.map.addLayer({
-            id: 'sites',
-            type: 'circle',
-            source: 'sites',
-            paint: {
-              'circle-color': '#4264fb',
-              'circle-radius': 6,
-              'circle-stroke-width': 2,
-              'circle-stroke-color': '#ffffff'
-            }
-          })
-        })
+
+// 1. Add an image to your map's style.
+this.map.loadImage('/image/pin.png', (error, image) => {
+    if (error) throw error;
+
+    this.map.addImage('location-pin', image);
+
+    // Add the geojson data source
+    this.map.addSource('sites', {
+        type: 'geojson',
+        data: dataset
+    });
+
+    // 2. Use this image in a layer of type 'symbol'.
+    this.map.addLayer({
+        id: 'sites',
+        type: 'symbol',
+        source: 'sites',
+        layout: {
+            'icon-image': 'location-pin', // reference the image you just added
+            'icon-size': 0.3 // adjust the size of the icon as needed
+        },
+        paint: {
+            'icon-color': '#ec919c'
+        }
+    });
+});
+});
 
         const popup = new mapboxgl.Popup({
         closeButton: false,
